@@ -14,7 +14,7 @@
 
 - [本站下载](http://www.jhuster.com/app/EWeightScale/EWeightScale.apk)
 
-- [安卓市场](http://shouji.baidu.com/soft/item?docid=7904186&from=web_alad_5&f=search_app_%E4%BD%93%E9%87%8D%E6%A1%A3%E6%A1%88%40list_1_title%401%40header_app_input)
+- [安卓市场](http://apk.hiapk.com/appinfo/com.jhuster.eweightscale)
 
 - [360手机助手](http://zhushou.360.cn/detail/index/soft_id/3073776?recrefer=SE_D_%E4%BD%93%E9%87%8D%E6%A1%A3%E6%A1%88#nogo)
 
