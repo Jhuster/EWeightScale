@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/RootLayout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	    
+	<LinearLayout 
+        android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:layout_margin="5dp">
+    	
+		<ImageView 
+    		android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_about_app"
+            android:layout_margin="5dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/img_about_app"/>
+	        	
+    	<TextView     	    
+    		android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/TextSizeBig"
+            android:textColor="@color/blue"
+            android:text="@string/slogan1" 
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>       
+            
+ 		<TextView     	    
+    		android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/TextSizeBig"
+            android:textColor="@color/blue"
+            android:text="@string/slogan2" 
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>       	       
+    	
+    </LinearLayout>
+	
+	<LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.0"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center">
+	    
+		<TextView     			
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"			
+			android:text="@string/aboutapp"            
+			android:textSize="@dimen/TextSizeNormal"         			
+			android:layout_marginTop="10dp"/>
+		
+		<TextView     			
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"			
+			android:text="@string/contrast"            
+			android:textSize="@dimen/TextSizeNormal"         			
+			android:layout_marginTop="10dp"/>
+		
+		<TextView                 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+            android:text="@string/website"            
+            android:textSize="@dimen/TextSizeNormal"                     
+            android:layout_marginTop="10dp"/>
+	    
+	</LinearLayout>
+        
+	<LinearLayout 
+        android:layout_width="match_parent"
+		android:layout_height="0dp"
+        android:layout_weight="1.0"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:layout_gravity="bottom"
+        android:gravity="bottom">
+        
+        <TextView     
+            android:text="@string/copyright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"               
+            android:textSize="@dimen/TextSizeSmall"         
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"/>
+        
+      	<TextView     			
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"			
+			android:text="@string/rightreserved"            
+			android:textSize="@dimen/TextSizeSmall"         
+			android:layout_gravity="center"
+			android:layout_marginTop="10dp"/>
+    </LinearLayout>
+	    
+</LinearLayout>

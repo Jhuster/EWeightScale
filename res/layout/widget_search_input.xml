@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"    
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_margin="5dp">
+        
+    <TextView
+        android:id="@+id/WidgetSearchInputTitle"
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"   
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/TextSizeNormal"
+        android:layout_gravity="left|center_vertical"
+        android:paddingLeft="10.0sp"
+        android:paddingRight="10.0sp"/>
+        
+    <EditText
+    	android:id="@+id/WidgetSearchInputEdit"
+        android:layout_width="match_parent"      
+    	android:layout_height="wrap_content"
+    	android:layout_margin="5dp"
+    	android:padding="10.0sp"
+    	android:singleLine="true"        
+        android:imeOptions="actionDone"   
+    	android:textSize="@dimen/TextSizeNormal"
+    	android:background="@drawable/shape_bg"/>
+                
+</LinearLayout>      

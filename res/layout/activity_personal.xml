@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/RootLayout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:background="@color/sys_bg">
+
+	<LinearLayout 
+        android:id="@+id/PersonalContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:layout_margin="10dp"    
+        android:background="@drawable/content_bg">
+	    
+	    <include layout="@layout/widget_sex_selecter"
+	        android:id="@+id/PersonalSex"/>
+	    
+	    <View
+        	android:layout_width="match_parent"
+        	android:layout_height="0.5dp"
+        	android:background="@color/divider"/>
+		
+		<include layout="@layout/widget_height_input"/>
+		
+		<View
+        	android:layout_width="match_parent"
+        	android:layout_height="0.5dp"
+        	android:background="@color/divider"/>
+
+		<include layout="@layout/widget_birthday_selecter"/>		
+	    
+	</LinearLayout>
+	    
+	<Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:onClick="onClickSaveInfo"
+        android:textColor="@color/white"
+        android:text="@string/save_info"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/blue_btn_selector"/>
+	    
+</LinearLayout>

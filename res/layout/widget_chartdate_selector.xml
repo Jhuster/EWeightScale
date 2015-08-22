@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"	
+	android:orientation="horizontal"
+	android:paddingTop="20dp"
+	android:gravity="center_horizontal">
+	
+    <TextView
+        android:id="@+id/DateSelectorTitle"
+        android:layout_width="wrap_content"        
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/TextSizeBig"
+        android:textColor="@android:color/black"        
+        android:visibility="gone"/>
+    
+    <Spinner
+        android:id="@+id/DateSelectorYearSpinner"
+        android:layout_width="wrap_content"      
+        android:layout_height="wrap_content"            
+        android:textSize="@dimen/TextSizeVeryBig"
+        android:background="@null"/>
+        
+    <Spinner
+        android:id="@+id/DateSelectorMonthSpinner"
+        android:layout_width="wrap_content"      
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/TextSizeVeryBig"
+        android:background="@null"/>
+
+</LinearLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">体重档案</string>
+
+    <string name="menu_chart">图表</string>
+    <string name="menu_data">数据</string>
+    <string name="menu_more">更多</string>
+    <string name="menu_square">诊断</string>
+    
+    <string name="action_search">搜索</string>
+    <string name="action_add">添加</string>
+    
+    <string name="data_continuous_days">持续记录</string>
+    <string name="data_reduce_week">本周体重</string>
+    <string name="data_reduce_month">本月体重</string>
+    
+    <string name="activity_title_search_result">检索结果</string>
+    <string name="activity_title_about">关于我们</string>
+
+    <string name="dlg_add_weight">添加体重</string>
+    <string name="dlg_add_weight_hint">请输入体重（kg）</string>
+    
+    <string name="dlg_search_weight">检索数据</string>
+    <string name="dlg_search_condition">检索方式</string>
+	
+	<string name="more_account">个人信息</string>	
+	<string name="more_setting">系统设置</string>
+	<string name="more_backup_restore">数据备份与恢复</string>
+	
+	<string name="more_what_bmi">什么是BMI</string>
+	<string name="more_what_bmr">什么是BMR</string>
+	
+	<string name="more_upgrade">检查新版本</string>
+	<string name="more_about">关于我们</string>
+	
+	<string name="img_about_app">图片</string>
+	
+	<string name="dlg_ok">确定</string>
+	<string name="dlg_cancel">取消</string>
+	<string name="dlg_yes">是</string>
+	<string name="dlg_no">否</string>
+	
+	<string name="year">年</string>
+	<string name="month">月</string>	
+	<string name="day">日</string>		
+	
+	<string name="sex">性别: </string>
+	<string name="male">男</string>
+	<string name="female">女</string>
+	
+	<string name="birthday">生日: </string>
+	<string name="height">身高: </string>
+	<string name="height_hint">请输入身高（cm） </string>
+	
+	<string name="save_info">保存</string>
+	
+	<string name="no_data">没有有效数据</string>
+	<string name="personalTips">请先到\"更多\"->\"个人信息\"栏目完善您的个人信息</string>
+	
+	<string name="current_star">当前身体指标</string>
+	<string name="square_weight">体重值：</string>
+	<string name="square_bmi">身体质量指数（BMI）：</string>
+	<string name="square_bmr">基础代谢率（BMR）：</string>
+	<string name="square_result">体重状况：</string>
+	<string name="square_dest_weight">您的健康体重范围：</string>
+	<string name="square_suggestion">诊断结果：</string>
+	
+	<string name="update_now">检测新版本</string>
+	<string name="update_result">当前已经是最新版本</string>
+	<string name="slogan1">记录体重变化</string>
+	<string name="slogan2">保持魔鬼身材</string>
+	<string name="aboutapp">软件作者：卢俊</string>
+	<string name="contrast">联系方式：lujun.hust@gmail.com</string>
+	<string name="website">个人网站：http://www.jhuster.com</string>
+	<string name="copyright">Copyright @2015 Jhuster</string>
+	<string name="rightreserved">All Rights Reserved</string>
+	<string name="setting_arrow">setting_arrow</string>		
+	
+	<string name="another_press_to_exit">再按一次退出程序</string>
+	
+</resources>

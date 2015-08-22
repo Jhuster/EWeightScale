@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_margin="5dp"
+    android:clickable="true"
+    android:background="@drawable/item_click_selector">
+                    
+    <TextView
+    	android:id="@+id/SettingItemTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue"
+        android:padding="@dimen/TextPadding"
+        android:textSize="@dimen/TextSizeNormal"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"/>
+            
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:src="@drawable/ic_goicon"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:contentDescription="@string/setting_arrow"/>
+                    
+</RelativeLayout>

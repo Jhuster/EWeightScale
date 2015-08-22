@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" 
+    android:padding="8dp">
+    
+	<TextView        
+	    android:id="@+id/RadioGroupTitle"
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"   
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/TextSizeNormal"
+        android:layout_gravity="left|center_vertical"
+        android:paddingLeft="10.0sp"
+        android:paddingRight="15.0sp"/>
+	
+	<RadioButton
+	    android:id="@+id/RadioYear"
+	    android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"
+        android:text="@string/year"
+        android:checked="true"
+        android:layout_marginRight="5dp"/>
+	
+	<RadioButton
+	    android:id="@+id/RadioMonth"
+	    android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"
+        android:text="@string/month"
+        android:layout_marginRight="5dp"/>
+    
+	<RadioButton
+	    android:id="@+id/RadioDay"
+	    android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"
+        android:text="@string/day"
+        android:layout_marginRight="5dp"/>
+	
+</RadioGroup>

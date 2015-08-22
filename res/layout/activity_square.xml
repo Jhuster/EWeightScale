@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/RootLayout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"	
+	android:background="@color/sys_bg">
+
+	<LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">   
+        
+		<LinearLayout 
+        	android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	android:orientation="vertical"
+        	android:layout_marginTop="10dp"
+        	android:layout_marginLeft="5dp"
+        	android:layout_marginRight="5dp"
+        	android:background="@drawable/content_bg">
+        
+        	<TextView 
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text="@string/current_star"
+            	android:textStyle="bold"   
+            	android:textColor="@color/blue"
+            	android:textSize="@dimen/TextSizeNormal"
+            	android:layout_margin="5dp"/>
+        
+        	<View
+            	android:layout_width="match_parent"
+            	android:layout_height="0.5dp"
+            	android:background="@color/divider"/>
+        	
+        	<include layout="@layout/widget_square_item"
+        	    android:id="@+id/SquareWeightItem"/>
+        	
+      		<View
+            	android:layout_width="match_parent"
+            	android:layout_height="0.5dp"
+            	android:background="@color/divider"/>
+        	        	
+        	<include layout="@layout/widget_square_item"
+        	    android:id="@+id/SquareBMIItem"/>
+        	
+    		<View
+            	android:layout_width="match_parent"
+            	android:layout_height="0.5dp"
+            	android:background="@color/divider"/>
+        	        	
+        	<include layout="@layout/widget_square_item"
+        	    android:id="@+id/SquareBMRItem"/>
+    	                    
+		</LinearLayout>
+	
+		<LinearLayout 
+        	android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	android:orientation="vertical"
+        	android:layout_margin="5dp"        	
+        	android:background="@drawable/content_bg">
+        
+        	<TextView 
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text="@string/square_suggestion"
+            	android:textStyle="bold"   
+            	android:textColor="@color/blue"
+            	android:textSize="@dimen/TextSizeNormal"
+            	android:layout_margin="5dp"/>
+        
+        	<View
+            	android:layout_width="match_parent"
+            	android:layout_height="0.5dp"
+            	android:background="@color/divider"/>
+         	
+        	<include layout="@layout/widget_square_item"
+        	    android:id="@+id/SquareResult"/>
+        	
+			<View
+            	android:layout_width="match_parent"
+            	android:layout_height="0.5dp"
+            	android:background="@color/divider"/>
+        	
+        	<include layout="@layout/widget_square_item"
+        	    android:id="@+id/SquareDestWeight"/>
+        	
+      		<View
+            	android:layout_width="match_parent"
+            	android:layout_height="0.5dp"
+            	android:background="@color/divider"/>
+        	        	
+    		<TextView 
+        		android:id="@+id/SquareTipsText"
+        		android:layout_margin="10dp"
+        		android:layout_width="wrap_content"
+       		 	android:layout_height="wrap_content"       
+        		android:singleLine="true"          
+        		android:textColor="@color/blue"             
+        		android:padding="5sp"        
+        		android:textSize="@dimen/TextSizeNormal"
+        		android:visibility="gone"/>
+
+		</LinearLayout>
+        			
+		<TextView 
+		    android:id="@+id/PersionalTips"
+			android:layout_width="wrap_content"
+     		android:layout_height="wrap_content"
+      		android:text="@string/personalTips"
+      		android:layout_marginTop="20dp"
+      		android:textColor="@color/blue"
+      		android:textStyle="bold"
+      		android:layout_gravity="center_horizontal"
+      		android:visibility="gone"/>
+            	
+	</LinearLayout>
+	
+</ScrollView>

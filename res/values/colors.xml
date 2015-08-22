@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+	<color name="white">@android:color/white</color>
+	<color name="black">@android:color/black</color>
+    <color name="blue">#083a8a</color>
+    <color name="gray">#FF888888</color>
+    <color name="green">#009933</color>
+	
+	<color name="divider">#FFCCCCCC</color>	    
+    <color name="sys_bg">#e6ecee</color>   
+	<color name="timestamp_bg">#dddfe2</color> 
+	
+</resources>

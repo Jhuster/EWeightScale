@@ -1,0 +1,7 @@
+<resources>
+	<dimen name="TextPadding">8dp</dimen>
+	<dimen name="TextSizeSmall">12sp</dimen>
+	<dimen name="TextSizeNormal">15sp</dimen>
+	<dimen name="TextSizeBig">20sp</dimen>
+	<dimen name="TextSizeVeryBig">30sp</dimen>	
+</resources>
