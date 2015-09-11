@@ -10,6 +10,10 @@
 
 ![应用截图](http://www.jhuster.com/app/EWeightScale/home.png)
 
+## 文章介绍
+
+[我的Android开源项目：体重档案](http://ticktick.blog.51cto.com/823160/1687127)
+
 ## 下载地址
 
 - [本站下载](http://www.jhuster.com/app/EWeightScale/EWeightScale.apk)
