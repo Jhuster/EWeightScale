@@ -43,7 +43,7 @@ public class ChartDateSelector implements Spinner.OnItemSelectedListener {
 		mMonthSpinner = (Spinner) layout.findViewById(R.id.DateSelectorMonthSpinner);
 		
 		ArrayList<String> years = new ArrayList<String>();
-		for( int year=CommonUtil.MinYear; year<CommonUtil.MaxYear; year++ ) {
+		for( int year=CommonUtil.MinYear; year<=CommonUtil.MaxYear; year++ ) {
 		    years.add(year+CommonUtil.YearUnit);
 		}
 		
@@ -52,7 +52,7 @@ public class ChartDateSelector implements Spinner.OnItemSelectedListener {
 		mYearSpinner.setAdapter(mYearSpinnerAdapter);		
 		
         ArrayList<String> months = new ArrayList<String>();
-        for( int month=CommonUtil.MinMonth; month<CommonUtil.MaxMonth; month++ ) {
+        for( int month=CommonUtil.MinMonth; month<=CommonUtil.MaxMonth; month++ ) {
             months.add(month+CommonUtil.MonthUnit);
         }
 	        
