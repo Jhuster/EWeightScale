@@ -32,15 +32,14 @@ public class SettingActivity extends Activity implements OnDateModeSelectListene
 		setContentView(R.layout.activity_setting);		
 		getActionBar().setTitle(TITLE);
 		
-		mDateModeSelector = new ChartModeSelector((RadioGroup)findViewById(R.id.SettingDateMode),
-				XAXIS_TITLE);				
+		mDateModeSelector = new ChartModeSelector((RadioGroup)findViewById(R.id.SettingDateMode),XAXIS_TITLE);				
 		mDateModeSelector.setRadioChecked(Configuration.getChartMode());
 		mDateModeSelector.setOnDateModeSelectListener(this);
 	}
 	
 	@Override
     public boolean onOptionsItemSelected(MenuItem item) {        
-        switch (item.getItemId() ) {
+        switch (item.getItemId()) {
         case android.R.id.home:
              finish();
         default:

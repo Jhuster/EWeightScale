@@ -60,7 +60,7 @@ public class WeightDBHelper {
         DatePeriod period = DateHelper.getWeekPeriod(DateHelper.getToday());
         String condition = WeightDB.getInstance().makeCondition(period.begin,period.end);    
         List<Weight> weights = WeightDB.getInstance().query(condition);        
-        if( weights.size() < 2 ) {
+        if (weights.size() < 2) {
             return 0.0;
         }
         return Double.valueOf(weights.get(0).value) - Double.valueOf(weights.get(weights.size()-1).value);
@@ -70,7 +70,7 @@ public class WeightDBHelper {
         DatePeriod period = DateHelper.getMonthPeriod(DateHelper.getToday());
         String condition = WeightDB.getInstance().makeCondition(period.begin,period.end);    
         List<Weight> weights = WeightDB.getInstance().query(condition);        
-        if( weights.size() < 2 ) {
+        if (weights.size() < 2) {
             return 0.0;
         }
         return Double.valueOf(weights.get(0).value) - Double.valueOf(weights.get(weights.size()-1).value);
@@ -80,10 +80,10 @@ public class WeightDBHelper {
         String condition = WeightDB.getInstance().makeCondition(period.begin,period.end);        
         List<Weight> weights = WeightDB.getInstance().query(condition);        
         Double average = 0.0;
-        if( weights.isEmpty() ) {
+        if (weights.isEmpty()) {
             return average;
         }
-        for( int i=0; i<weights.size(); i++) {
+        for (int i=0; i<weights.size(); i++) {
             average += Double.valueOf(weights.get(i).value);
         }           
         average = average/weights.size();         
@@ -96,7 +96,7 @@ public class WeightDBHelper {
         DatePeriod period = DateHelper.getDatePeriod(DateHelper.getYestday());
         String condition = WeightDB.getInstance().makeCondition(period.begin,period.end);        
         List<Weight> weights = WeightDB.getInstance().query(condition);
-        if(weights.isEmpty()) {            
+        if (weights.isEmpty()) {            
             return false;
         }
         return true;
@@ -106,15 +106,15 @@ public class WeightDBHelper {
         DatePeriod period = DateHelper.getDatePeriod(DateHelper.getToday());
         String condition = WeightDB.getInstance().makeCondition(period.begin,period.end);        
         List<Weight> weights = WeightDB.getInstance().query(condition);
-        if(weights.isEmpty()) {            
+        if (weights.isEmpty()) {            
             return false;
         }
         return true;
     }
     
     public static int getContinuousDays() {        
-        if( !isYestdayRecord() ) {
-            if(isTodayRecord()) {
+        if (!isYestdayRecord()) {
+            if (isTodayRecord()) {
                 Configuration.setContinousDays(1);
             }
             else {
@@ -125,7 +125,7 @@ public class WeightDBHelper {
     }
     
     public static void addContinuousDays() {
-        if(!isTodayRecord()) {
+        if (!isTodayRecord()) {
             int continuous = Configuration.getContinousDays();        
             Configuration.setContinousDays(++continuous);   
         }        

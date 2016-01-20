@@ -113,10 +113,10 @@ public class SearchDialog implements OnDateModeSelectListener {
 	
 	public String getSearchCondition() {	    
 	    DatePeriod period = null; 	    
-	    if( mSearchType == SearchType.SearchTypeYear ) {
+	    if (mSearchType == SearchType.SearchTypeYear) {
 	        period = DateHelper.getYearPeriod(getSearchYear()); 	        
 	    }
-	    else if( mSearchType == SearchType.SearchTypeMonth ) {
+	    else if (mSearchType == SearchType.SearchTypeMonth) {
 	        period = DateHelper.getMonthPeriod(getSearchYear(),getSearchMonth());
 	    }
 	    else {

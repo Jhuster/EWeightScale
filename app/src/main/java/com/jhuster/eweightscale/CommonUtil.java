@@ -38,7 +38,7 @@ public class CommonUtil {
 	private static final int BACK_KEY_EXIT_TIME_PEROID = 1000;    
     private static long mLastBackKeyPressedTime = 0;
     
-	public static double calculateBMI( double weight, double height ) {		
+	public static double calculateBMI(double weight, double height) {		
 		DecimalFormat format = new DecimalFormat("0.00");
 		double result = weight/(height*height)*10000; 						
 		return Double.valueOf(format.format(result).toString());
@@ -47,7 +47,7 @@ public class CommonUtil {
 	public static double calculateBMR(int sex, double weight, double height, int age) {		
 		double result = 0.0;		
 		DecimalFormat format = new DecimalFormat("0.00");		
-		if( sex == UserSexMale ) {
+		if (sex == UserSexMale) {
 			result = 655 + (9.6*weight)  + (1.8*height) - (4.7*age);
 		}
 		else {
@@ -69,7 +69,7 @@ public class CommonUtil {
 	}
 	
 	public static boolean onExitProcess(Context context) {
-	    if( System.currentTimeMillis() - mLastBackKeyPressedTime >  BACK_KEY_EXIT_TIME_PEROID ) {
+	    if (System.currentTimeMillis() - mLastBackKeyPressedTime >  BACK_KEY_EXIT_TIME_PEROID) {
             mLastBackKeyPressedTime = System.currentTimeMillis(); 
             Toast.makeText(context,context.getString(R.string.another_press_to_exit), Toast.LENGTH_SHORT).show();
             return false;

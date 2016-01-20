@@ -101,8 +101,8 @@ public class ChartActivity extends Activity implements OnDateSelectedListener,On
     
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {        
-        if( keyCode == KeyEvent.KEYCODE_BACK ) {                              
-            if( !CommonUtil.onExitProcess(this) ) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {                              
+            if (!CommonUtil.onExitProcess(this)) {
             	return true;
             }
         }        

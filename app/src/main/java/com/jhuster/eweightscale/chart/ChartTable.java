@@ -33,7 +33,7 @@ public class ChartTable {
 	}
 	
 	public void add(double x, double y) {
-	    if(!ignore(x,y)) {
+	    if (!ignore(x,y)) {
 	        mSeries.add(x, y);  
 	    }	        							
 	}
@@ -47,7 +47,7 @@ public class ChartTable {
 	}
 	
 	public boolean ignore(double x, double y) {
-	    if( x==0.0 || y==0.0 ) {
+	    if (x==0.0 || y==0.0) {
 	        return true;
 	    }
 	    return false;

@@ -43,7 +43,7 @@ public class ChartDateSelector implements Spinner.OnItemSelectedListener {
 		mMonthSpinner = (Spinner) layout.findViewById(R.id.DateSelectorMonthSpinner);
 		
 		ArrayList<String> years = new ArrayList<String>();
-		for( int year=CommonUtil.MinYear; year<=CommonUtil.MaxYear; year++ ) {
+		for (int year=CommonUtil.MinYear; year<=CommonUtil.MaxYear; year++) {
 		    years.add(year+CommonUtil.YearUnit);
 		}
 		
@@ -52,7 +52,7 @@ public class ChartDateSelector implements Spinner.OnItemSelectedListener {
 		mYearSpinner.setAdapter(mYearSpinnerAdapter);		
 		
         ArrayList<String> months = new ArrayList<String>();
-        for( int month=CommonUtil.MinMonth; month<=CommonUtil.MaxMonth; month++ ) {
+        for (int month=CommonUtil.MinMonth; month<=CommonUtil.MaxMonth; month++) {
             months.add(month+CommonUtil.MonthUnit);
         }
 	        
@@ -76,14 +76,14 @@ public class ChartDateSelector implements Spinner.OnItemSelectedListener {
 		mYearSpinner.setVisibility(View.GONE);
 		mMonthSpinner.setVisibility(View.GONE);
 		
-		if(chartmode == CommonUtil.ChartModeYear) {
+		if (chartmode == CommonUtil.ChartModeYear) {
 			mViewTitle.setText(TITLE_DEFAULT);
 			mViewTitle.setVisibility(View.VISIBLE);						
 		}
-		else if(chartmode == CommonUtil.ChartModeMonth) {									
+		else if (chartmode == CommonUtil.ChartModeMonth) {									
 			setSelectedYear(Calendar.getInstance().get(Calendar.YEAR));
 		}
-		else if(chartmode == CommonUtil.ChartModeDay) {						
+		else if (chartmode == CommonUtil.ChartModeDay) {						
 			setSelectedYear(Calendar.getInstance().get(Calendar.YEAR));
 			setSelectedMonth(Calendar.getInstance().get(Calendar.MONTH));
 		}
@@ -118,7 +118,7 @@ public class ChartDateSelector implements Spinner.OnItemSelectedListener {
 
 	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        if( mDateSelectedListener!=null) {
+        if (mDateSelectedListener != null) {
             mDateSelectedListener.onDateSelected();
         }
 	}

@@ -51,7 +51,7 @@ public class WeightData {
 	
 	public String getBMIValue() {       
         double height = Configuration.getUserHeight();
-        if(height == 0.0) {
+        if (height == 0.0) {
             return "0.00";
         }               
         double bmi = CommonUtil.calculateBMI(Double.valueOf(mWeightValue), height);             

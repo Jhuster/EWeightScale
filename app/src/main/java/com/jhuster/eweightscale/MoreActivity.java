@@ -23,9 +23,8 @@ public class MoreActivity extends Activity implements OnClickListener {
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        
-		setContentView(R.layout.activity_more);
+        super.onCreate(savedInstanceState);        
+        setContentView(R.layout.activity_more);
         
         addSettingItem(R.id.MoreAccount,getString(R.string.more_account));
         
@@ -49,18 +48,18 @@ public class MoreActivity extends Activity implements OnClickListener {
         Intent intent = null;                
         switch (v.getId()) {
         case R.id.MoreAccount:      
-        	 intent = new Intent(this,PersonalActivity.class);
-        	 startActivity(intent);
+             intent = new Intent(this,PersonalActivity.class);
+        	   startActivity(intent);
              break;
         case R.id.MoreBackupOrRestore:                           
              break;             
         case R.id.MoreSetting:        
-        	 intent = new Intent(this,SettingActivity.class);
-        	 startActivity(intent);
+        	   intent = new Intent(this,SettingActivity.class);
+        	   startActivity(intent);
              break;
         case R.id.MoreWhatBMI: 
-        	 intent = new Intent(this,WhatActivity.class);
-        	 intent.putExtra("What", "BMI");
+             intent = new Intent(this,WhatActivity.class);
+             intent.putExtra("What", "BMI");
        	     startActivity(intent);
              break;
         case R.id.MoreWhatBMR:      
@@ -69,8 +68,8 @@ public class MoreActivity extends Activity implements OnClickListener {
       	     startActivity(intent);
              break;         
        case R.id.MoreAboutUs:      
-    		 intent = new Intent(this,AboutActivity.class);
-    		 startActivity(intent);
+             intent = new Intent(this,AboutActivity.class);
+            startActivity(intent);
              break;
         default:
              return;
@@ -79,8 +78,8 @@ public class MoreActivity extends Activity implements OnClickListener {
     
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {       
-        if( keyCode == KeyEvent.KEYCODE_BACK ) {                              
-            if( !CommonUtil.onExitProcess(this) ) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) { 
+            if (!CommonUtil.onExitProcess(this)) {
             	return true;
             }
         }        

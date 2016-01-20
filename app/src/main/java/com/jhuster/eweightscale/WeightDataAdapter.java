@@ -57,7 +57,7 @@ public class WeightDataAdapter extends BaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {				
 		
-		if( convertView == null ) {		
+		if (convertView == null) {
 			LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);          
             convertView = (LinearLayout)inflater.inflate(R.layout.widget_weight_item, null);
             ViewHolder holder = new ViewHolder();
@@ -69,7 +69,7 @@ public class WeightDataAdapter extends BaseAdapter {
 		}				
 
 		Weight weight = (Weight)getItem(position);
-		if( weight != null ) {
+		if (weight != null) {
 		    WeightData data = new WeightData(weight);
 		    ViewHolder holder = (ViewHolder)convertView.getTag();
 		    holder.mWeightWeek.setText(data.getWeekStr());

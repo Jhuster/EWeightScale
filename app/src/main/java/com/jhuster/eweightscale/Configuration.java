@@ -34,7 +34,7 @@ public class Configuration {
         public void onChartModeChanged(int chartmode);
     }
        
-    public static void initialize( Context context ) {       		
+    public static void initialize(Context context) {       		
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context); 
     }
     
@@ -52,7 +52,7 @@ public class Configuration {
         edit.commit();
     }
     
-    public static void setUserSex( int sex ) {    	
+    public static void setUserSex(int sex) {    	
     	SharedPreferences.Editor edit = mSharedPreferences.edit();        
         edit.putInt(CONFIG_USER_SEX, sex);        
         edit.commit();
@@ -86,7 +86,7 @@ public class Configuration {
     	return Calendar.getInstance().get(Calendar.YEAR) - getUserBirthdayYear();
     }
     
-    public static void setUserHeight( String height ) {
+    public static void setUserHeight(String height) {
     	SharedPreferences.Editor edit = mSharedPreferences.edit();        
         edit.putString(CONFIG_USER_HEIGHT, height);
         edit.commit();
@@ -94,7 +94,7 @@ public class Configuration {
     
     public static double getUserHeight() {    	
     	String heightStr = mSharedPreferences.getString(CONFIG_USER_HEIGHT, "");
-    	if( "".equals(heightStr) ) {
+    	if ("".equals(heightStr)) {
     		return 0;
     	}    	
     	return Double.valueOf(heightStr);
@@ -111,11 +111,11 @@ public class Configuration {
     }
     
     public static void setChartMode(int chartmode) {
-        if(chartmode!=getChartMode()) {
+        if (chartmode!=getChartMode()) {
             SharedPreferences.Editor edit = mSharedPreferences.edit();        
             edit.putInt(CONFIG_CHART_MODE, chartmode);        
             edit.commit();
-            if(mChartModeChangeListener!=null) {
+            if (mChartModeChangeListener!=null) {
                 mChartModeChangeListener.onChartModeChanged(chartmode);
             }   
         }    	

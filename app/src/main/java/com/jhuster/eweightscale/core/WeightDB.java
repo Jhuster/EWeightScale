@@ -41,9 +41,9 @@ public class WeightDB {
 	
 	protected static final WeightDB mInstance = new WeightDB();
 		
-	private final String DB_TABLE_CREATE_SQL = "create table " + DB_TABLE_NAME + " ( _id integer primary key autoincrement, "          
+	private final String DB_TABLE_CREATE_SQL = "create table " + DB_TABLE_NAME + " (_id integer primary key autoincrement, "          
             + DB_TABLE_COLUMN_WEIGHT + " text not null, " 
-            + DB_TABLE_COLUMN_DATE + " integer );";	
+            + DB_TABLE_COLUMN_DATE + " integer);";	
 	
 	public interface OnDBDataChangeListener {
 	    public void onDBDataChanged();
@@ -56,7 +56,7 @@ public class WeightDB {
 	}
 	
 	protected class DatabaseHelper extends SQLiteOpenHelper {
-		public DatabaseHelper(Context context,String dbName, int dbVersion ) {
+		public DatabaseHelper(Context context,String dbName, int dbVersion) {
 			super(context, dbName , null, dbVersion);
 		}
 		@Override
@@ -78,7 +78,7 @@ public class WeightDB {
 	
 	public void setOnDBDataChangeListener(OnDBDataChangeListener listener) {
 	    mDBDataChangeListener = listener;
-	    if(listener!=null) {
+	    if (listener!=null) {
 	        listener.onDBDataChanged();   
 	    }	    
 	}
@@ -88,7 +88,7 @@ public class WeightDB {
 			mDBHelper = new DatabaseHelper(context,DB_NAME,DB_VERSION);
 			mDB = mDBHelper.getWritableDatabase();
 		}
-		catch( SQLException e ) {
+		catch(SQLException e) {
 			e.printStackTrace();
 			return false;
 		}		
@@ -102,7 +102,7 @@ public class WeightDB {
 
 	public String makeCondition(int position) {
         long key = getkey(position,null);
-        if( key == -1 ) {
+        if (key == -1) {
             return null;
         }
         String condition = DB_PRIMARY_KEY + "=" + "\'" + key + "\'";
@@ -111,7 +111,7 @@ public class WeightDB {
 	
 	public String makeCondition(int position,String condition) {
         long key = getkey(position,condition);
-        if( key == -1 ) {
+        if (key == -1) {
             return null;
         }
         String conditions = DB_PRIMARY_KEY + "=" + "\'" + key + "\'";
@@ -120,7 +120,7 @@ public class WeightDB {
     
     public String makeCondition(long startdate,long enddate) {
         String condition = DB_TABLE_COLUMN_DATE + " >= " + startdate + " AND ";        
-        condition += (DB_TABLE_COLUMN_DATE + " < " + enddate );    
+        condition += (DB_TABLE_COLUMN_DATE + " < " + enddate);    
         return condition;
     }
     
@@ -146,28 +146,28 @@ public class WeightDB {
 	    values.put(DB_TABLE_COLUMN_WEIGHT, weight.value);
 	    values.put(DB_TABLE_COLUMN_DATE, weight.date);
 	    weight.key = mDB.insert(DB_TABLE_NAME,null,values); 		
-		if( weight.key == -1 ) {
+		if (weight.key == -1) {
 			Log.e(TAG,"db insert fail!");
 			return false;
 		}		
-        if( mDBDataChangeListener!=null ) {
+        if (mDBDataChangeListener!=null) {
             mDBDataChangeListener.onDBDataChanged();
         }
 		return true;		
 	}	
 	
     public boolean update(Weight weight) {
-        if( weight.key == -1 ) {
+        if (weight.key == -1) {
            return false;
         }
         ContentValues values = new ContentValues();
         values.put(DB_TABLE_COLUMN_WEIGHT, weight.value);
         values.put(DB_TABLE_COLUMN_DATE, weight.date);
         String condition = DB_PRIMARY_KEY + "=" + "\'" + weight.key + "\'";  
-        if( !update(values,condition,null) ) {
+        if (!update(values,condition,null)) {
             return false;
         }
-        if( mDBDataChangeListener!=null ) {
+        if (mDBDataChangeListener!=null) {
             mDBDataChangeListener.onDBDataChanged();
         }
         return true;
@@ -175,7 +175,7 @@ public class WeightDB {
     
     protected boolean update(ContentValues values, String whereClause, String[] whereArgs) {        
         int rows = mDB.update(DB_TABLE_NAME,values, whereClause, whereArgs);
-        if( rows <= 0 ) {           
+        if (rows <= 0) {           
             Log.d(TAG,"db update fail!");
             return false;
         }   
@@ -196,11 +196,11 @@ public class WeightDB {
 	
 	protected boolean delete(String whereClause, String[] whereArgs) {		
 		int rows = mDB.delete(DB_TABLE_NAME,whereClause,whereArgs);
-		if( rows <= 0 ) {
+		if (rows <= 0) {
 			Log.e(TAG,"db delete fail!");
 			return false;
 		}
-		if( mDBDataChangeListener!=null ) {
+		if (mDBDataChangeListener!=null) {
             mDBDataChangeListener.onDBDataChanged();
         }
 		return true;	
@@ -222,7 +222,7 @@ public class WeightDB {
 	    Cursor cursor = mDB.query(DB_TABLE_NAME,null,condition,null,null,null,
 	            DB_DEFAULT_ORDERBY,null);	           
         List<Weight> weights = extract(position,cursor);
-        if( weights.isEmpty() ) {
+        if (weights.isEmpty()) {
             return null;
         }
         return weights.get(0);
@@ -253,7 +253,7 @@ public class WeightDB {
 	protected List<Weight> extract(int position, Cursor cursor) {
 	    
 	    List<Weight> weights = new ArrayList<Weight>();
-	    if( cursor == null || cursor.getCount() <= position ) {
+	    if (cursor == null || cursor.getCount() <= position) {
             return weights;
         }
 
@@ -277,7 +277,7 @@ public class WeightDB {
 	    long key = -1;	
 		Cursor cursor = mDB.query(true,DB_TABLE_NAME, new String[]{DB_PRIMARY_KEY},condition,null,null,null, 
 		        DB_DEFAULT_ORDERBY, null);		
-		if (cursor != null && cursor.getCount() > 0 ) {			
+		if (cursor != null && cursor.getCount() > 0) {			
 			cursor.moveToPosition(position);			
 			key = cursor.getLong(cursor.getColumnIndex(DB_PRIMARY_KEY));				
 			cursor.close();

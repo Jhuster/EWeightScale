@@ -59,11 +59,11 @@ public class PersonalActivity extends Activity implements OnDateChangedListener 
 		mBirthdayText.setText(birthday);
 		
 		int sex = Configuration.getUserSex(); 
-		if(  sex == CommonUtil.UserSexFemale ) {
+		if (sex == CommonUtil.UserSexFemale) {
 			mRadioGroup.check(R.id.RadioFemale);
 		}
 		
-		if( Configuration.getUserHeight() != 0.0 ) {
+		if (Configuration.getUserHeight() != 0.0) {
 			String height = String.valueOf(Configuration.getUserHeight());
 			mHeightEditText.setText(height);
 		}		
@@ -71,7 +71,7 @@ public class PersonalActivity extends Activity implements OnDateChangedListener 
 	
 	@Override
     public boolean onOptionsItemSelected(MenuItem item) {        
-        switch (item.getItemId() ) {
+        switch (item.getItemId()) {
         case android.R.id.home:
              finish();
         default:
@@ -81,7 +81,7 @@ public class PersonalActivity extends Activity implements OnDateChangedListener 
     }
 	
 	public void onClickSaveInfo(View v) {
-		if( R.id.RadioMale == mRadioGroup.getCheckedRadioButtonId() ) {
+		if (R.id.RadioMale == mRadioGroup.getCheckedRadioButtonId()) {
 			Configuration.setUserSex(CommonUtil.UserSexMale);					
 		}
 		else {

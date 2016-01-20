@@ -75,7 +75,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
                 .setIndicator(getResources().getString(R.string.menu_more), getResources().getDrawable(R.drawable.menu_more_selector))
                 .setContent(iMore));
         
-        if( Configuration.isFirstStart() ) {
+        if (Configuration.isFirstStart()) {
             addTestData();
         }
     }
@@ -104,7 +104,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         menu.clear();        
-        if( mTabHost.getCurrentTabTag().equals(TAB_TAG_DATAS) ) {
+        if (mTabHost.getCurrentTabTag().equals(TAB_TAG_DATAS)) {
             getMenuInflater().inflate(R.menu.menu_actions, menu);
         }                
         return super.onPrepareOptionsMenu(menu);
@@ -112,7 +112,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
     
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {        
-        switch (item.getItemId() ) {
+        switch (item.getItemId()) {
         case R.id.action_search:
              onClickSearch();
              break;
@@ -149,7 +149,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
     protected void addTestData() {        
         Calendar calendar = Calendar.getInstance();
         Double value = 55.0;                
-        for( int i=0; i<5; i++ ) {            
+        for (int i=0; i<5; i++) {            
             value = value + 2.0;
             calendar.add(Calendar.DAY_OF_MONTH, -1);            
             Weight weight = new Weight();
@@ -157,7 +157,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
             weight.date = calendar.getTimeInMillis();
             WeightDB.getInstance().insert(weight);
         }        
-        for( int i=5; i<10; i++ ) {            
+        for (int i=5; i<10; i++) {            
             value = value - 3.0;
             calendar.add(Calendar.DAY_OF_MONTH, -1);            
             Weight weight = new Weight();
@@ -174,7 +174,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
         dlg.setOnClickListener(new OnClickListener() {            
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                if( which == DialogInterface.BUTTON_POSITIVE ) {
+                if (which == DialogInterface.BUTTON_POSITIVE) {
                     Weight weight = new Weight();
                     weight.value = String.format("%-4s",dlg.getInputValue());
                     weight.date = Calendar.getInstance().getTimeInMillis();
@@ -188,7 +188,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
     
     protected void onClickSearch() { 
         
-        if( mSearchWeightDailog != null ) {
+        if (mSearchWeightDailog != null) {
             mSearchWeightDailog.show();
             return;
         }
@@ -197,7 +197,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
         mSearchWeightDailog.setOnClickListener(new OnClickListener() {            
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                if( which == DialogInterface.BUTTON_POSITIVE ) {
+                if (which == DialogInterface.BUTTON_POSITIVE) {
                     String condition = mSearchWeightDailog.getSearchCondition();
                     Intent intent = new Intent(MainActivity.this,DataActivity.class);
                     intent.putExtra("Condition",condition);

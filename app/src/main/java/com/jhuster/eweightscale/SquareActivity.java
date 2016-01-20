@@ -60,7 +60,7 @@ public class SquareActivity extends Activity {
 	    
 	    //判断是否有体重数据
         Weight weight = WeightDB.getInstance().get(0);
-        if(weight == null) {
+        if (weight == null) {
             mPersonalTips.setText(getString(R.string.no_data));
             mPersonalTips.setVisibility(View.VISIBLE);          
             mWeightItem.setItemValue("");
@@ -74,7 +74,7 @@ public class SquareActivity extends Activity {
         //判断个人信息是否填写好了
         double height = Configuration.getUserHeight();
         int age = Configuration.getUserAge();       
-        if( height <= 0.0 || age <= 0 ) {
+        if (height <= 0.0 || age <= 0) {
             mPersonalTips.setText(getString(R.string.personalTips));
             mPersonalTips.setVisibility(View.VISIBLE);
         }
@@ -86,16 +86,16 @@ public class SquareActivity extends Activity {
         WeightData weightdata = new WeightData(weight);     
         mWeightItem.setItemValue(weightdata.getWeightStr());
         String bmi = weightdata.getBMIValue();
-        if( !"".equals(bmi) ) {         
+        if (!"".equals(bmi)) {         
             mBMIItem.setItemValue(bmi);         
             double BMI = Double.valueOf(bmi);               
-            if( BMI < 18.5 ) {
+            if (BMI < 18.5) {
                 mResultItem.setItemValue(BMI_THIN_WEIGHT);
             }
-            else if( BMI >= 18.5 && BMI < 24 ) {
+            else if (BMI >= 18.5 && BMI < 24) {
                 mResultItem.setItemValue(BMI_NICE_WEIGHT);
             }
-            else if( BMI >= 24 && BMI < 28 ) {
+            else if (BMI >= 24 && BMI < 28) {
                 mResultItem.setItemValue(BMI_FAT_WEIGHT);
             }
             else {
@@ -104,7 +104,7 @@ public class SquareActivity extends Activity {
         }
                 
         //显示目标体重
-        if( height != 0 ) {
+        if (height != 0) {
             double HEIGHT = Double.valueOf(height);
             String destWeight = CommonUtil.calculateMinWeight(HEIGHT) + "kg" + 
                     "～" + CommonUtil.calculateMaxWeight(HEIGHT) + "kg";
@@ -115,7 +115,7 @@ public class SquareActivity extends Activity {
         int bmr_age = Configuration.getUserAge();           
         double bmr_height = Configuration.getUserHeight();
         int bmr_sex = Configuration.getUserSex();
-        if( bmr_age!=0 && !"".equals(weight) && bmr_height!= 0 ) {
+        if (bmr_age!=0 && !"".equals(weight) && bmr_height!= 0) {
             double bmr_weight = Double.valueOf(weightdata.getWeightValue());
             String bmrStr = CommonUtil.calculateBMR(bmr_sex, bmr_weight, bmr_height, bmr_age) + "千卡";
             mBMRItem.setItemValue(bmrStr);
@@ -124,8 +124,8 @@ public class SquareActivity extends Activity {
 	
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {        
-        if( keyCode == KeyEvent.KEYCODE_BACK ) {                              
-            if( !CommonUtil.onExitProcess(this) ) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {                              
+            if (!CommonUtil.onExitProcess(this)) {
             	return true;
             }
         }        

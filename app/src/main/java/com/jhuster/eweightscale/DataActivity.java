@@ -49,7 +49,7 @@ public class DataActivity extends Activity implements OnDBDataChangeListener {
 		mDataSummary = (LinearLayout)findViewById(R.id.DataSummary);
 		
 		mCondition = getIntent().getStringExtra("Condition");
-		if( mCondition != null && !"".equals(mCondition) ) {
+		if (mCondition != null && !"".equals(mCondition)) {
 		    getActionBar().setDisplayHomeAsUpEnabled(true);        
 	        getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_bg));
 		    getActionBar().setTitle(getString(R.string.activity_title_search_result));
@@ -99,14 +99,14 @@ public class DataActivity extends Activity implements OnDBDataChangeListener {
 	    mTextContinuousDays.setText(WeightDBHelper.getContinuousDays()+"天");
 	    Double reduced = 0.0;
 	    reduced = WeightDBHelper.getWeightReduceThisWeek();	    
-	    if( reduced > 0 ) {
+	    if (reduced > 0) {
 	        mTextReduceWeek.setText("+" + new DecimalFormat("0.00").format(reduced) + " kg");
 	    }
 	    else {
 	        mTextReduceWeek.setText(reduced + " kg");
 	    }
 	    reduced = WeightDBHelper.getWeightReduceThisMonth();
-        if( reduced > 0 ) {
+        if (reduced > 0) {
             mTextReduceMonth.setText("+" + new DecimalFormat("0.00").format(reduced) + " kg");
         }
         else {
@@ -116,7 +116,7 @@ public class DataActivity extends Activity implements OnDBDataChangeListener {
 	
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {        
-        switch (item.getItemId() ) {
+        switch (item.getItemId()) {
         case android.R.id.home:
              finish();
         default:
@@ -136,7 +136,7 @@ public class DataActivity extends Activity implements OnDBDataChangeListener {
 	public boolean onContextItemSelected(MenuItem item) {				
 		switch(item.getItemId()) {
 		    case R.id.DataDelete:
-		    	 if(mSelectedPosition != -1) {		
+		    	 if (mSelectedPosition != -1) {		
 		    		 WeightDB.getInstance().delete(mSelectedPosition,mCondition);
 		    	 }		    	 
 		         return true;
@@ -150,9 +150,9 @@ public class DataActivity extends Activity implements OnDBDataChangeListener {
 	
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {        
-        if( keyCode == KeyEvent.KEYCODE_BACK ) {               
-            if( mCondition == null || "".equals(mCondition) ) {
-                if( !CommonUtil.onExitProcess(this) ) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {               
+            if (mCondition == null || "".equals(mCondition)) {
+                if (!CommonUtil.onExitProcess(this)) {
                     return true;
                 }   
             }            

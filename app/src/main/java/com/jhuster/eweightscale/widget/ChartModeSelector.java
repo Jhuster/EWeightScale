@@ -41,20 +41,20 @@ public class ChartModeSelector implements OnCheckedChangeListener {
 	}
 	
 	public void setRadioChecked(int datemode) {		
-		if( datemode == CommonUtil.ChartModeYear ) {
+		if (datemode == CommonUtil.ChartModeYear) {
 			mRadioGroup.check(R.id.RadioYear);
 		}
-		else if( datemode == CommonUtil.ChartModeMonth ) {
+		else if (datemode == CommonUtil.ChartModeMonth) {
 			mRadioGroup.check(R.id.RadioMonth);
 		}
-		else if( datemode == CommonUtil.ChartModeDay ) {
+		else if (datemode == CommonUtil.ChartModeDay) {
 			mRadioGroup.check(R.id.RadioDay);
 		}
 		else{}
 	}
 	
     public void setVisibility(boolean isVisible) {    	
-    	if(isVisible) {
+    	if (isVisible) {
     		mRadioGroup.setVisibility(View.VISIBLE);
     	}
     	else {
@@ -63,8 +63,8 @@ public class ChartModeSelector implements OnCheckedChangeListener {
     }    
 
 	@Override
-	public void onCheckedChanged( RadioGroup group, int checkedId) {
-	    if(mDateModeSelectListener==null) {
+	public void onCheckedChanged(RadioGroup group, int checkedId) {
+	    if (mDateModeSelectListener == null) {
 	        return;
 	    }
 		switch(checkedId) {

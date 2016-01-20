@@ -42,11 +42,11 @@ public class ChartFolder {
 	}
 	
     public void invalidate() {
-        if(mChartAdapter==null) {
+        if (mChartAdapter==null) {
             return;
         }
         mChartTable.clear();
-        for(int i=mChartAdapter.getMinXScale(); i<mChartAdapter.getMaxXScale(); i++) {                                              
+        for (int i=mChartAdapter.getMinXScale(); i<mChartAdapter.getMaxXScale(); i++) {                                              
             mChartTable.add(i,mChartAdapter.getYScale(i));                
         }
         mChartView.repaint();
@@ -93,7 +93,7 @@ public class ChartFolder {
 	        
 	    //手动决定最大的X坐标 （防止没有数据的时候不显示Label）
 	    render.setXAxisMin(min);
-	    if( max-min > 10 ) {
+	    if (max-min > 10) {
 	    	render.setXAxisMax(min+10); 
 	    }
 	    else {
@@ -102,7 +102,7 @@ public class ChartFolder {
 	    
 	    //如果要自定义X轴坐标Label，则必须设置为0
 	    render.setXLabels(0);
-	    for( int i=min; i<=max; i++ ) {
+	    for (int i=min; i<=max; i++) {
 	    	render.addXTextLabel(i, i+unit);
 	    }
 	    
@@ -115,7 +115,7 @@ public class ChartFolder {
 	    datasheet.addSeries(mChartTable.getSeries());
         render.addSeriesRenderer(mChartTable.getRender());
 	    
-        if(mChartView!=null) {
+        if (mChartView!=null) {
             mParentView.removeView(mChartView);
         }
         

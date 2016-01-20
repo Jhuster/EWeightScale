@@ -71,18 +71,18 @@ public class InputDialog implements TextWatcher {
 	@Override
 	public void afterTextChanged(Editable s) {
 	    
-		if( mAlertDialog == null ) {
+		if (mAlertDialog == null) {
 			return;
 		}
 		
 		mAlertDialog.getButton(DialogInterface.BUTTON_POSITIVE).setEnabled(false);
 		
-		if( "".equals(s.toString()) ) {           
+		if ("".equals(s.toString())) {           
             return;
         }        
 		
 		Double value = Double.valueOf(s.toString());
-		if( value < MIN_INPUT_DATA || value > MAX_INPUT_DATA ) {
+		if (value < MIN_INPUT_DATA || value > MAX_INPUT_DATA) {
 		    return;
 		}
 		
